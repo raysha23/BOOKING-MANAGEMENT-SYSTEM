@@ -1,0 +1,157 @@
+﻿@{
+    Layout = "_AdminLayout";
+    ViewData[index: "Title"] = "Dashboard";
+}
+
+<style>
+    .card {
+        border-radius: 0.5rem;
+    }
+</style>
+<h2>Dashboard</h2>
+<p class="text-muted">Welcome back! Here's what's happening today.</p>
+
+<div class="row g-3 mb-4">
+
+    <!-- Total Users -->
+    <div class="col-md-3">
+        <div class="card bg-white shadow-sm">
+            <div class="d-flex justify-content-between align-items-center p-3 w-100">
+                <div class="card-icon d-flex align-items-center justify-content-center bg-primary text-white rounded-circle"
+                    style="width: 50px; height: 50px;">
+                    <i class="bi bi-people-fill fs-4"></i>
+                </div>
+                <div class="text-add text-success fw-bold">+12%</div>
+            </div>
+            <div class="p-3 text-start w-100">
+                <div class="text-muted small mb-1" style="font-size: 14px;">Total Users</div>
+                <div class="h5 mb-0">248</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Events -->
+    <div class="col-md-3">
+        <div class="card bg-white shadow-sm">
+            <div class="d-flex justify-content-between align-items-center p-3 w-100">
+                <div class="card-icon d-flex align-items-center justify-content-center bg-success text-white rounded-circle"
+                    style="width: 50px; height: 50px;">
+                    <i class="bi bi-calendar-event fs-4"></i>
+                </div>
+                <div class="text-add text-success fw-bold">+8%</div>
+            </div>
+            <div class="p-3 text-start w-100">
+                <div class="text-muted small mb-1" style="font-size: 14px;">Active Events</div>
+                <div class="h5 mb-0">12</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Bookings -->
+    <div class="col-md-3">
+        <div class="card bg-white shadow-sm">
+            <div class="d-flex justify-content-between align-items-center p-3 w-100">
+                <div class="card-icon d-flex align-items-center justify-content-center bg-warning text-white rounded-circle"
+                    style="width: 50px; height: 50px;">
+                    <i class="bi bi-clock fs-4"></i>
+                </div>
+                <div class="text-add text-danger fw-bold">-5%</div>
+            </div>
+            <div class="p-3 text-start w-100">
+                <div class="text-muted small mb-1" style="font-size: 14px;">Pending Bookings</div>
+                <div class="h5 mb-0">34</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completed -->
+    <div class="col-md-3">
+        <div class="card bg-white shadow-sm">
+            <div class="d-flex justify-content-between align-items-center p-3 w-100">
+                <div class="card-icon d-flex align-items-center justify-content-center"
+                    style="width: 50px; height: 50px; background-color: #6f42c1; color: white; border-radius: 50%;">
+                    <i class="bi bi-check-circle fs-4"></i>
+                </div>
+                <div class="text-add text-success fw-bold">+20%</div>
+            </div>
+            <div class="p-3 text-start w-100">
+                <div class="text-muted small mb-1" style="font-size: 14px;">Completed</div>
+                <div class="h5 mb-0">156</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Card -->
+<div class="card bg-white shadow-sm p-3 mb-4">
+    <h5>Weekly Bookings</h5>
+    <canvas id="weeklyBookingsChart" style="height:300px;"></canvas>
+</div>
+
+<script>
+    const ctx = document.getElementById('weeklyBookingsChart').getContext('2d');
+    const weeklyBookingsChart = new Chart(ctx, {
+        type: 'bar', // Vertical bar chart
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], // X-axis labels
+            datasets: [{
+                label: 'Bookings',
+                data: [12, 19, 8, 15, 20, 13, 9], // Sample data
+                backgroundColor: '#4F39F6', // Bar color
+                borderRadius: 5 // Rounded bars
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false }, // Hide legend if not needed
+                tooltip: { enabled: true }
+            },
+            scales: {
+                x: { grid: { display: false } }, // Remove x-axis grid
+                y: {
+                    beginAtZero: true,
+                    grid: { color: '#e0e0e0' }
+                }
+            }
+        }
+    });
+</script>
+
+
+<div class="card p-3 w-100">
+    <h5 class="mb-3 text-start w-100">Recent Activity</h5>
+
+    <ul class="list-unstyled w-100 ">
+        <!-- First list item -->
+        <li class="d-flex justify-content-between align-items-start mb-2 border-bottom pb-2">
+            <div class="d-flex flex-column">
+                <span class="fw-bold">New user registered</span>
+                <small class="text-muted">Customer1@gmail.com</small>
+            </div>
+            <small class="text-muted">2 minutes ago</small>
+        </li>
+
+        <!-- Other list items -->
+        <li class="d-flex justify-content-between align-items-start mb-2 border-bottom pb-2">
+            <div class="d-flex flex-column">
+                <span class="fw-bold">Events</span>
+                <small class="text-muted">Customer1@gmail.com</small>
+            </div>
+            <small class="text-muted">2 minutes ago</small>
+        </li>
+
+        <li class="d-flex justify-content-between align-items-start mb-2 border-bottom pb-2">
+            <div class="d-flex flex-column">
+                <span class="fw-bold">Booking confirmed</span>
+                <small class="text-muted">Customer1@gmail.com</small>
+            </div>
+            <small class="text-muted">2 minutes ago</small>
+        </li>
+    </ul>
+</div>

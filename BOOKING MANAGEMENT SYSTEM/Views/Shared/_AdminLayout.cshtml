@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Admin</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            background-color: #f8f9fa;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #fff;
+            border-right: 1px solid #dee2e6;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+        }
+
+        .sidebar .nav-link {
+            color: #495057;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: #e9ecef;
+            border-radius: 0.5rem;
+            color: #4F39F6;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 1rem;
+        }
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+
+        .top-navar {
+            display: flex;
+            align-items: center;
+            /* vertically center items */
+            margin-bottom: 2rem;
+            padding: 10px;
+            /* optional, for spacing */
+        }
+
+        .logo {
+            font-size: 23px;
+            color: white;
+            background-color: #4F39F6;
+            margin-right: 0.8rem;
+            padding: 5px 10px 5px 10px;
+            /* make it square */
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .title-navar h5 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+        .title-navar p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column">
+        <div class="top-navar">
+            <div class="logo">
+                <i class="bi bi-grid-fill"></i>
+            </div>
+            <div class="title-navar">
+                <h5>Admin Portal</h5>
+                <p>Admin</p>
+            </div>
+        </div>
+        <nav class="nav flex-column">
+            <a class="nav-link active" href="@Url.Action(action: "Index", controller: "Dashboard")"><i class="bi bi-grid-fill me-2"></i>
+                Dashboard</a>
+            <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i> Users</a>
+            <a class="nav-link" href="#"><i class="bi bi-calendar-event me-2"></i> Events</a>
+            <a class="nav-link" href="#"><i class="bi bi-clock me-2"></i> Appointments</a>
+            <a class="nav-link" href="#"><i class="bi bi-bookmark-fill me-2"></i> Bookings</a>
+            <a class="nav-link" href="#"><i class="bi bi-file-text me-2"></i> Reports</a>
+        </nav>
+        <div class="mt-auto pt-3">
+            <div class="small text-muted">Admin User</div>
+            <div class="small text-muted">admin@demo.com</div>
+            <a href="#" class="d-block mt-2"><i class="bi bi-box-arrow-right me-1"></i> Logout</a>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
