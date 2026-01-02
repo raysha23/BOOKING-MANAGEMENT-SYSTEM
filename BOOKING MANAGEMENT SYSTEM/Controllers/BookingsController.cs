@@ -4,9 +4,8 @@ namespace BOOKING_MANAGEMENT_SYSTEM.Controllers
 {
   public class BookingsController : Controller
   {
-    public IActionResult Index()
+    public IActionResult Bookings()
     {
-
       ViewBag.ActivePage = "Bookings";
       return View();
     }

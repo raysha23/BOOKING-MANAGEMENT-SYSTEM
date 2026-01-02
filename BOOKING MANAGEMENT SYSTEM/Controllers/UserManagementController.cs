@@ -2,9 +2,9 @@
 
 namespace BOOKING_MANAGEMENT_SYSTEM.Controllers
 {
-  public class UserManagement : Controller
+  public class UserManagementController : Controller
   {
-    public IActionResult Index()
+    public IActionResult UserManagement()
     {
       ViewBag.ActivePage = "UserManagement";
       return View();

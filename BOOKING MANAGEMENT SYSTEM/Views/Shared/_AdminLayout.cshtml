@@ -114,31 +114,31 @@
         <nav class="nav flex-column">
 
             <a class="nav-link @(ViewBag.ActivePage == "Dashboard" ? "active" : "")"
-                href="@Url.Action("Index", "Dashboard")">
+                href="@Url.Action(action: "Dashboard", controller: "Dashboard")">
                 <i class="bi bi-grid-fill me-2"></i> Dashboard
             </a>
             <a class="nav-link @(ViewBag.ActivePage == "UserManagement" ? "active" : "")"
-                href="@Url.Action("Index", "UserManagement")">
+                href="@Url.Action(action: "UserManagement", controller: "UserManagement")">
                 <i class="bi bi-people-fill me-2"></i> Users
             </a>
 
             <a class="nav-link @(ViewBag.ActivePage == "Events" ? "active" : "")"
-                href="@Url.Action("Index", "Events")">
+               href="@Url.Action("Events", "Events")">
                 <i class="bi bi-calendar-event me-2"></i> Events
             </a>
 
             <a class="nav-link @(ViewBag.ActivePage == "Appointments" ? "active" : "")"
-                href="@Url.Action("Index", "Appointments")">
+               href="@Url.Action("Appointments", "Appointments")">
                 <i class="bi bi-clock me-2"></i> Appointments
             </a>
 
             <a class="nav-link @(ViewBag.ActivePage == "Bookings" ? "active" : "")"
-                href="@Url.Action("Index", "Bookings")">
+               href="@Url.Action("Bookings", "Bookings")">
                 <i class="bi bi-bookmark-fill me-2"></i> Bookings
             </a>
 
             <a class="nav-link @(ViewBag.ActivePage == "Reports" ? "active" : "")"
-                href="@Url.Action("Index", "Reports")">
+               href="@Url.Action("Reports", "Reports")">
                 <i class="bi bi-file-text me-2"></i> Reports
             </a>
 

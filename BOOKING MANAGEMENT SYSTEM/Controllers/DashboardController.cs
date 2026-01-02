@@ -2,12 +2,13 @@
 
 namespace BOOKING_MANAGEMENT_SYSTEM.Controllers
 {
-  public class Dashboard : Controller
+  public class DashboardController : Controller
   {
-    public IActionResult Index()
+    public IActionResult Dashboard()
     {
       ViewBag.ActivePage = "Dashboard";
-      return View();
+      return View("Dashboard");
     }
   }
+
 }

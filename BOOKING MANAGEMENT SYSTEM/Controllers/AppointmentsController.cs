@@ -4,10 +4,10 @@ namespace BOOKING_MANAGEMENT_SYSTEM.Controllers
 {
   public class AppointmentsController : Controller
   {
-    public IActionResult Index()
+    public IActionResult Appointments()
     {
       ViewBag.ActivePage = "Appointments";
-      return View();
+      return View("Appointments");
     }
   }
 }
