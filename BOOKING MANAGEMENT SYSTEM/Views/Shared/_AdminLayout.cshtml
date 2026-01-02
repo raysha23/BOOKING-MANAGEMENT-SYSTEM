@@ -112,13 +112,36 @@
             </div>
         </div>
         <nav class="nav flex-column">
-            <a class="nav-link active" href="@Url.Action(action: "Index", controller: "Dashboard")"><i class="bi bi-grid-fill me-2"></i>
-                Dashboard</a>
-            <a class="nav-link" href="#"><i class="bi bi-people-fill me-2"></i> Users</a>
-            <a class="nav-link" href="#"><i class="bi bi-calendar-event me-2"></i> Events</a>
-            <a class="nav-link" href="#"><i class="bi bi-clock me-2"></i> Appointments</a>
-            <a class="nav-link" href="#"><i class="bi bi-bookmark-fill me-2"></i> Bookings</a>
-            <a class="nav-link" href="#"><i class="bi bi-file-text me-2"></i> Reports</a>
+
+            <a class="nav-link @(ViewBag.ActivePage == "Dashboard" ? "active" : "")"
+                href="@Url.Action("Index", "Dashboard")">
+                <i class="bi bi-grid-fill me-2"></i> Dashboard
+            </a>
+            <a class="nav-link @(ViewBag.ActivePage == "UserManagement" ? "active" : "")"
+                href="@Url.Action("Index", "UserManagement")">
+                <i class="bi bi-people-fill me-2"></i> Users
+            </a>
+
+            <a class="nav-link @(ViewBag.ActivePage == "Events" ? "active" : "")"
+                href="@Url.Action("Index", "Events")">
+                <i class="bi bi-calendar-event me-2"></i> Events
+            </a>
+
+            <a class="nav-link @(ViewBag.ActivePage == "Appointments" ? "active" : "")"
+                href="@Url.Action("Index", "Appointments")">
+                <i class="bi bi-clock me-2"></i> Appointments
+            </a>
+
+            <a class="nav-link @(ViewBag.ActivePage == "Bookings" ? "active" : "")"
+                href="@Url.Action("Index", "Bookings")">
+                <i class="bi bi-bookmark-fill me-2"></i> Bookings
+            </a>
+
+            <a class="nav-link @(ViewBag.ActivePage == "Reports" ? "active" : "")"
+                href="@Url.Action("Index", "Reports")">
+                <i class="bi bi-file-text me-2"></i> Reports
+            </a>
+
         </nav>
         <div class="mt-auto pt-3">
             <div class="small text-muted">Admin User</div>

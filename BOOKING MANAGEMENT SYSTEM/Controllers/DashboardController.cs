@@ -6,6 +6,7 @@ namespace BOOKING_MANAGEMENT_SYSTEM.Controllers
   {
     public IActionResult Index()
     {
+      ViewBag.ActivePage = "Dashboard";
       return View();
     }
   }
