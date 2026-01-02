@@ -36,6 +36,11 @@
 	.right-side button i {
 		margin-right: 0.5rem;
 	}
+
+	.user {
+		color: rgb(83, 83, 212);
+
+	}
 </style>
 <div class="header">
 	<div class="left-side">
@@ -70,7 +75,7 @@
 			<!-- User -->
 			<td>
 				<div class="d-flex align-items-center">
-					<i class="bi bi-person-circle me-3 "></i>
+					<i class="user bi bi-person-circle me-3 fs-3"></i>
 					<div>
 						<div class="fw-semibold">John Doe</div>
 						<small class="text-muted">john@gmail.com</small>
@@ -88,6 +93,47 @@
 			<!-- Status -->
 			<td>
 				<span class="badge bg-success">Active</span>
+			</td>
+
+			<!-- Created -->
+			<td>
+				<small class="text-muted">2023-08-15</small>
+			</td>
+
+			<!-- Actions -->
+			<td class="text-end">
+				<button class="btn btn-sm btn-outline-primary me-1" title="Edit">
+					<i class="bi bi-pencil-fill"></i>
+				</button>
+
+				<button class="btn btn-sm btn-outline-danger" title="Delete">
+					<i class="bi bi-trash-fill"></i>
+				</button>
+			</td>
+		</tr>
+
+		<tr>
+			<!-- User -->
+			<td>
+				<div class="d-flex align-items-center">
+					<i class="user bi bi-person-circle me-3 fs-3"></i>
+					<div>
+						<div class="fw-semibold">Raymund Sismundo</div>
+						<small class="text-muted">Raymund@gmail.com</small>
+					</div>
+				</div>
+			</td>
+
+			<!-- Role -->
+			<td>
+				<span class="badge bg-primary-subtle text-primary fw-semibold">
+					Staff
+				</span>
+			</td>
+
+			<!-- Status -->
+			<td>
+				<span class="badge bg-danger">Disabled</span>
 			</td>
 
 			<!-- Created -->
