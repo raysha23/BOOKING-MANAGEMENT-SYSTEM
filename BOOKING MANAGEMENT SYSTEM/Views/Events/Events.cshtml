@@ -2,4 +2,247 @@
 	Layout = "_AdminLayout";
 	ViewData[index: "Title"] = "Events";
 }
-<h2>Events</h2>
+<style>
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1.5rem;
+	}
+
+	.left-side h2 {
+		margin: 0;
+	}
+
+	.left-side p {
+		margin: 0;
+		color: #6c757d;
+	}
+
+	.right-side button {
+		background-color: #4F39F6;
+		color: white;
+		border: none;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		font-size: 1rem;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.right-side button i {
+		margin-right: 0.5rem;
+	}
+</style>
+<div class="header">
+	<div class="left-side">
+		<h2>Events Management</h2>
+		<p class="text-muted">Create and manage events</p>
+	</div>
+	<div class="right-side">
+		<button class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add Event</button>
+	</div>
+</div>
+
+
+<div class="container-fluid mt-4">
+	<div class="row g-3">
+		<!-- Event Card -->
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="bg-white rounded shadow-sm h-100">
+
+				<div class="card-body">
+					<!-- Header -->
+					<div class="d-flex justify-content-between align-items-center mb-2">
+						<h6 class="mb-0 fw-semibold">Tech Conference 2026</h6>
+						<span class="badge bg-success">Open</span>
+					</div>
+
+					<!-- Details -->
+					<p class="text-muted small mb-2">
+						Date: March 15, 2026 <br>
+						Location: New York City
+					</p>
+
+					<!-- Slots -->
+					<div class="d-flex align-items-center mb-3">
+						<i class="bi bi-people me-2"></i>
+						<span class="small">45 / 100 slots available</span>
+					</div>
+				</div>
+
+				<!-- Bottom Actions -->
+				<div class="card-footer bg-white d-flex justify-content-between align-items-center">
+
+					<!-- Status Dropdown -->
+					<select class="form-select form-select-sm w-50">
+						<option>Open</option>
+						<option>Closed</option>
+						<option>Completed</option>
+					</select>
+
+					<!-- Action Buttons -->
+					<div>
+						<button class="btn btn-sm btn-outline-primary me-1">
+							<i class="bi bi-pencil"></i>
+						</button>
+						<button class="btn btn-sm btn-outline-danger">
+							<i class="bi bi-trash"></i>
+						</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Copy the col-lg-4 block to add more cards -->
+		<!-- Event Card -->
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="bg-white rounded shadow-sm h-100">
+
+				<div class="card-body">
+					<!-- Header -->
+					<div class="d-flex justify-content-between align-items-center mb-2">
+						<h6 class="mb-0 fw-semibold">Tech Conference 2026</h6>
+						<span class="badge bg-danger">Closed</span>
+					</div>
+
+					<!-- Details -->
+					<p class="text-muted small mb-2">
+						Date: March 15, 2026 <br>
+						Location: New York City
+					</p>
+
+					<!-- Slots -->
+					<div class="d-flex align-items-center mb-3">
+						<i class="bi bi-people me-2"></i>
+						<span class="small">45 / 100 slots available</span>
+					</div>
+				</div>
+
+				<!-- Bottom Actions -->
+				<div class="card-footer bg-white d-flex justify-content-between align-items-center">
+
+					<!-- Status Dropdown -->
+					<select class="form-select form-select-sm w-50">
+						<option>Open</option>
+						<option>Closed</option>
+						<option>Completed</option>
+					</select>
+
+					<!-- Action Buttons -->
+					<div>
+						<button class="btn btn-sm btn-outline-primary me-1">
+							<i class="bi bi-pencil"></i>
+						</button>
+						<button class="btn btn-sm btn-outline-danger">
+							<i class="bi bi-trash"></i>
+						</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+
+
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="bg-white rounded shadow-sm h-100">
+
+				<div class="card-body">
+					<!-- Header -->
+					<div class="d-flex justify-content-between align-items-center mb-2">
+						<h6 class="mb-0 fw-semibold">Tech Conference 2026</h6>
+						<span class="badge bg-secondary">Completed</span>
+					</div>
+
+					<!-- Details -->
+					<p class="text-muted small mb-2">
+						Date: March 15, 2026 <br>
+						Location: New York City
+					</p>
+
+					<!-- Slots -->
+					<div class="d-flex align-items-center mb-3">
+						<i class="bi bi-people me-2"></i>
+						<span class="small">45 / 100 slots available</span>
+					</div>
+				</div>
+
+				<!-- Bottom Actions -->
+				<div class="card-footer bg-white d-flex justify-content-between align-items-center">
+
+					<!-- Status Dropdown -->
+					<select class="form-select form-select-sm w-50">
+						<option>Open</option>
+						<option>Closed</option>
+						<option>Completed</option>
+					</select>
+
+					<!-- Action Buttons -->
+					<div>
+						<button class="btn btn-sm btn-outline-primary me-1">
+							<i class="bi bi-pencil"></i>
+						</button>
+						<button class="btn btn-sm btn-outline-danger">
+							<i class="bi bi-trash"></i>
+						</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="bg-white rounded shadow-sm h-100">
+
+				<div class="card-body">
+					<!-- Header -->
+					<div class="d-flex justify-content-between align-items-center mb-2">
+						<h6 class="mb-0 fw-semibold">Tech Conference 2026</h6>
+						<span class="badge bg-secondary">Completed</span>
+					</div>
+
+					<!-- Details -->
+					<p class="text-muted small mb-2">
+						Date: March 15, 2026 <br>
+						Location: New York City
+					</p>
+
+					<!-- Slots -->
+					<div class="d-flex align-items-center mb-3">
+						<i class="bi bi-people me-2"></i>
+						<span class="small">45 / 100 slots available</span>
+					</div>
+				</div>
+
+				<!-- Bottom Actions -->
+				<div class="card-footer bg-white d-flex justify-content-between align-items-center">
+
+					<!-- Status Dropdown -->
+					<select class="form-select form-select-sm w-50">
+						<option>Open</option>
+						<option>Closed</option>
+						<option>Completed</option>
+					</select>
+
+					<!-- Action Buttons -->
+					<div>
+						<button class="btn btn-sm btn-outline-primary me-1">
+							<i class="bi bi-pencil"></i>
+						</button>
+						<button class="btn btn-sm btn-outline-danger">
+							<i class="bi bi-trash"></i>
+						</button>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
