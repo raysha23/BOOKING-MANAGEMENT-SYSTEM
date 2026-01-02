@@ -2,5 +2,109 @@
 	Layout = "_AdminLayout";
 	ViewData[index: "Title"] = "User Management";
 }
-<h2>User Management</h2>
-<p class="text-muted">Manage your system users here.</p>
+<style>
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 2rem;
+	}
+
+	.left-side .header-title {
+		font-size: 2rem;
+		font-weight: bold;
+		margin: 0;
+	}
+
+	.left-side .header-subtitle {
+		font-size: 1rem;
+		color: #6c757d;
+	}
+
+	.right-side button {
+		background-color: #4F39F6;
+		color: white;
+		border: none;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		font-size: 1rem;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	.right-side button i {
+		margin-right: 0.5rem;
+	}
+</style>
+<div class="header">
+	<div class="left-side">
+		<h1 class="header-title">User Management</h1>
+		<div class="header-subtitle">Manage your accounts and permissions</div>
+	</div>
+	<div class="right-side">
+		<button><i class="bi bi-person-plus"></i> Add User</button>
+	</div>
+</div>
+
+<div class="search">
+	<div class="input-group mb-3 border rounded">
+		<span class="input-group-text bg-white border-0"><i class="bi bi-search"></i></span>
+		<input type="text" class="form-control border-0" placeholder="Search users..." aria-label="Search users">
+	</div>
+</div>
+
+<table class="table table-hover align-middle">
+	<thead class="table-light">
+		<tr>
+			<th>User</th>
+			<th>Role</th>
+			<th>Status</th>
+			<th>Created</th>
+			<th class="text-end">Actions</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<!-- User -->
+			<td>
+				<div class="d-flex align-items-center">
+					<i class="bi bi-person-circle me-3 "></i>
+					<div>
+						<div class="fw-semibold">John Doe</div>
+						<small class="text-muted">john@gmail.com</small>
+					</div>
+				</div>
+			</td>
+
+			<!-- Role -->
+			<td>
+				<span class="badge bg-primary-subtle text-primary fw-semibold">
+					Admin
+				</span>
+			</td>
+
+			<!-- Status -->
+			<td>
+				<span class="badge bg-success">Active</span>
+			</td>
+
+			<!-- Created -->
+			<td>
+				<small class="text-muted">2023-08-15</small>
+			</td>
+
+			<!-- Actions -->
+			<td class="text-end">
+				<button class="btn btn-sm btn-outline-primary me-1" title="Edit">
+					<i class="bi bi-pencil-fill"></i>
+				</button>
+
+				<button class="btn btn-sm btn-outline-danger" title="Delete">
+					<i class="bi bi-trash-fill"></i>
+				</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
