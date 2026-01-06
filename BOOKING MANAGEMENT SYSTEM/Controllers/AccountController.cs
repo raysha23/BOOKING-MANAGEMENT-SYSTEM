@@ -1,23 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BOOKING_MANAGEMENT_SYSTEM.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BOOKING_MANAGEMENT_SYSTEM.Controllers
 {
   public class AccountController : Controller
   {
-    public IActionResult Login()
+    [HttpGet]
+    public IActionResult LoginView()
     {
       return View();
     }
+
     [HttpPost]
-    public IActionResult Login(string username, string password)
+    public IActionResult Authenticate(LoginViewModel model)
     {
-      if (username == "admin" && password == "1234")
+      if (!ModelState.IsValid)
       {
-        return RedirectToAction("Index", "Home");
+        return View("LoginView", model);
       }
 
-      ViewBag.Error = "Invalid username or password";
-      return View();
+      // TEMP: hardcoded (replace with DB later)
+      if (model.Email == "admin@demo.com" && model.Password == "admin123")
+      {
+        return RedirectToAction("Dashboard", "Dashboard");
+      }
+
+      ViewBag.Error = "Invalid email or password";
+      return View("LoginView",model);
     }
 
   }

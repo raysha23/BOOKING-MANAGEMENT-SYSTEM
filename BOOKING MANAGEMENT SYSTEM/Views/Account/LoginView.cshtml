@@ -1,0 +1,114 @@
+﻿@{
+	Layout = "_LoginLayout";
+	ViewData["Title"] = "Login";
+
+}
+
+<style>
+	body {
+		background-color: #EAF1FF;
+	}
+
+	.login-card {
+		max-width: 400px;
+		width: 100%;
+		border-radius: 1rem;
+		padding: 2rem;
+		background-color: #fff;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+
+	.lock-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+		.lock-icon i {
+			font-size: 24px;
+			background-color: #4F39F6;
+			color: white;
+			width: 59px;
+			height: 59px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+		}
+
+	.btn-custom {
+		background-color: #4F39F6;
+		color: white;
+		c
+	}
+
+		.btn-custom:hover {
+			background-color: #3f2ed1;
+			color: white;
+		}
+
+	.input-group-text i {
+		font-size: 1rem;
+	}
+</style>
+
+@model BOOKING_MANAGEMENT_SYSTEM.Models.LoginViewModel;
+
+<div class="login-container d-flex align-items-center justify-content-center min-vh-100">
+	<div class="login-card text-center position-relative">
+		<!-- Lock icon -->
+		<div class="lock-icon">
+			<i class="bi bi-lock"></i>
+		</div>
+
+		<!-- Title -->
+		<h2 class="mb-1 fw-bold">Admin Dashboard</h2>
+		<p class="text-muted mb-4">Sign in to manage your system</p>
+
+		<form asp-action="Authenticate" asp-controller="Account" method="post">
+			<div class="mb-3 text-start">
+				<label asp-for="Email" class="form-label">Email Address</label>
+				<div class="input-group">
+					<span class="input-group-text">
+						<i class="bi bi-envelope"></i>
+					</span>
+					<input asp-for="Email"
+						   type="email"
+						   class="form-control"
+						   placeholder="admin@demo.com" />
+				</div>
+				<span asp-validation-for="Email" class="text-danger small"></span>
+			</div>
+
+			<div class="mb-3 text-start">
+				<label asp-for="Password" class="form-label">Password</label>
+				<div class="input-group">
+					<span class="input-group-text">
+						<i class="bi bi-lock"></i>
+					</span>
+					<input asp-for="Password"
+						   type="password"
+						   class="form-control"
+						   placeholder="••••••••" />
+				</div>
+				<span asp-validation-for="Password" class="text-danger small"></span>
+			</div>
+
+			<button type="submit" class="btn btn-custom w-100 py-2">
+				Sign In
+			</button>
+
+		</form>
+		@if (ViewBag.Error != null)
+		{
+			<p class="text-danger mt-3">@ViewBag.Error</p>
+		}
+
+		<!-- Demo credentials -->
+		<div class="mt-4 p-3 bg-light rounded text-muted text-start small">
+			<p class="mb-1"><strong>Demo Credentials:</strong></p>
+			<p class="mb-0">Email: admin@demo.com</p>
+			<p class="mb-0">Password: admin123</p>
+		</div>
+	</div>
+</div>
